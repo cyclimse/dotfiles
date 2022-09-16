@@ -9,6 +9,8 @@ return require('packer').startup(function()
 
 use 'wbthomason/packer.nvim'
 
+use 'Pocco81/auto-save.nvim'
+
 -- Theme
 use {'drewtempelmeyer/palenight.vim'}
 

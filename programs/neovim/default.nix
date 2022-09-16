@@ -16,8 +16,18 @@
       rnix-lsp
       # Zig (my boi)
       zls
+      # Golang
+      gopls
+      golangci-lint
+      (pkgs.callPackage ./golangci-lint-langserver.nix {
+        version = "0.0.7";
+      })
+      # Elixirls
+      elixir_ls
       # Patched fonts
-      (nerdfonts.override { fonts = [ "Hermit" "Ubuntu" "UbuntuMono" ]; })
+      (nerdfonts.override {
+        fonts = [ "Hermit" "Ubuntu" "UbuntuMono" ];
+      })
     ];
 
     xdg.configFile = {

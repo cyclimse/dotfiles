@@ -40,3 +40,5 @@ map('n', '<leader>h', ':Files<CR>')
 map('n', '<leader>d', ':LspDiagnosticsAll<CR>')
 
 map('n', '<leader>t', ':NvimTreeToggle<CR>')
+
+map('n', '<leader>n', ':ASToggle<CR>')

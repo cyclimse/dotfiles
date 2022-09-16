@@ -1,2 +1,7 @@
+# Secrets declaration file
+**secrets**
+!secrets.template.nix
+
+# Neovim sessions
 **/sessions
 **/*.save

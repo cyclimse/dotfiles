@@ -15,7 +15,7 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap=true, silent=false }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -76,7 +76,10 @@ local servers = {
       },
     },
     },
+    elixirls = {},
     html = {},
+    gopls = {},
+    golangci_lint_ls = {},
     pyright = {},
     rnix = {},
     sumneko_lua = {
@@ -115,7 +118,7 @@ for name, opts in pairs(servers) do
         cmd = opts.cmd or client.cmd,
         filetypes = opts.filetypes or client.filetypes,
         init_options = opts.init_options,
-        on_attach = opts.on_attach and on_attach,
+        on_attach = on_attach,
         settings = opts.settings or {}
     })
 end
